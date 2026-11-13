@@ -1,0 +1,17 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.env
+
+# Node / Expo
+node_modules/
+.expo/
+dist/
+web-build/
+
+# Downloaded source HTML
+**/bridge-status.html
+
+# OS files
+.DS_Store

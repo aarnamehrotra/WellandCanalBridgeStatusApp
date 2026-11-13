@@ -4,5 +4,5 @@ export type Bridge = {
   id: string;
   name: string;
   status: BridgeStatus;
-  lastUpdated: string;
+  statusText: string;
 };
