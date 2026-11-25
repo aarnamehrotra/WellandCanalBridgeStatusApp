@@ -6,3 +6,10 @@ export type Bridge = {
   status: BridgeStatus;
   statusText: string;
 };
+
+export type BridgeApiResponse = {
+  id: string;
+  name: string;
+  status: BridgeStatus;
+  status_text: string;
+};
