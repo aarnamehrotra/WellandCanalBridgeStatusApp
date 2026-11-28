@@ -1,5 +1,6 @@
-from fastapi import FastAPI
-from scraper import scrape_bridges
+
+from fastapi import FastAPI, HTTPException
+from database import get_bridge_statuses
 
 app = FastAPI(title="WellandCanalBridgeStatus API")
 
@@ -11,6 +12,15 @@ def root():
 
 @app.get("/bridges")
 def get_bridges():
+    bridges = get_bridge_statuses()
+
+    if not bridges:
+        raise HTTPException(
+            status_code=503,
+            detail="Bridge statuses have not been populated yet."
+        )
+
     return {
-        "bridges": scrape_bridges()
+        "bridges": bridges
     }
+
